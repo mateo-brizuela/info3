@@ -2,35 +2,31 @@
 
 int main(int argc, char const *argv[])
 {
-    int i;
+    // declaracion de variables
+    int i; //variables para recorrer el vector
     int j;
-    int cop;
+    int cop; // variable auxiliar para intercambiar de posicion elementos del vector
     int vector[] = {8, 5, 9, 2, 6, 3};
 
-    for ( i = 0; i < 5; i++)
+    // el bucle se ordena por el metodo de isercion
+    for ( i = 1; i < 6; i++)
     {
-        if (vector[i] > vector[i+1] || i==5)
+        j = i;
+        while (vector[j] < vector[j-1] && j!=0)
         {
-            j = i+1;
-            while (vector[j] < vector[j-1] || j==0)
-            {
-                cop = vector[j-1];
-                vector[j-1] = vector[j];
-                vector[j] = cop;
-                j--;    
-            }
+            cop = vector[j-1];
+            vector[j-1] = vector[j];
+            vector[j] = cop;
+            j--;    
         }
         
     }
 
+    //imprimo el vector en pantalla
     for ( i = 0; i < 6; i++)
     {
         printf("%d",vector[i]);
     }
-    
-    
-
-
 
     return 0;
 }
