@@ -1,4 +1,8 @@
 ### Java ###
+
+# Ignorar todas las carpetas 'bin' en cualquier ubicación
+**/bin/
+
 # Clases compiladas
 *.class
 
