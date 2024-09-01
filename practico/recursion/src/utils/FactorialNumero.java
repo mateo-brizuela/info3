@@ -3,7 +3,6 @@ package utils;
 public class FactorialNumero {
     
     public static void main(String[] args) {
-        System.out.println("hola mundo");
         int numero = 5;
         int resultado = 0;
         resultado = CFactorial(numero);
