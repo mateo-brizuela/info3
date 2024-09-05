@@ -15,4 +15,30 @@ public class Ordenador {
         }
     }
 
+    public static void ordenarPorPrecio(ArrayList<Pedido> lista){
+        // variables para recorrer la lista
+        int izq = 0;
+        int der = 0;
+        int n = lista.size();
+        int gap = n;
+        //variables para realizar los intercambios en los elementos de la lista
+        int izq2 = 0;
+        int der2 = 0;
+        int aux = 0;
+
+        while (gap != 0) {
+            gap /= 2;
+            izq = 0;
+            der = izq + gap;
+
+            //inicio el segundo bucle, que va a recorrer la lista hasta el final de la misma
+            while (der < n) {
+                if () {
+                    
+                }
+            }
+        }
+
+    }
+
 }
