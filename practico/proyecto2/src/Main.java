@@ -1,5 +1,6 @@
 package practico.proyecto2.src;
 import java.util.*;
+import static practico.proyecto2.src.Ordenador.ordenarPorTiempo;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +15,14 @@ public class Main {
             System.out.println("---------------------------------");
             System.out.println("Se presenta un menú de opciones:");
             System.out.println(
-                    "1-Agregar nuevo pedido.\n2-Eliminar pedido.\n3-Actualizar información de un pedido.\n4-Ordenar por tiempo de preparacion (inserción).\n4-Ordenar por precio total (Shellsort).\n5-Ordenar por nombre del cliente (Quicksort).\n6-Salir.");
+                    "1-Agregar nuevo pedido.\n"+
+                    "2-Eliminar pedido.\n"+
+                    "3-Actualizar información de un pedido.\n"+
+                    "4-Ordenar por tiempo de preparacion (inserción).\n"+
+                    "4-Ordenar por precio total (Shellsort).\n"+
+                    "5-Ordenar por nombre del cliente (Quicksort).\n"+
+                    "6-Imprimir lista completa\n"+
+                    "7-Salir.");
             System.out.println("Seleccione a continuación la acción que desea realizar:");
             menu_op = consola.nextInt();
             switch (menu_op) {
@@ -31,10 +39,14 @@ public class Main {
                 case 3:
                     break;
                 case 4:
+                    ordenarPorTiempo(pedidos);
                     break;
                 case 5:
                     break;
                 case 6:
+                    imprimirPedidos(pedidos);
+                    break;
+                case 7:
                     exit = true;
                     break;
                 default:
