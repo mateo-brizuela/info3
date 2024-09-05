@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Ordenador {
+public class Ordenador {
 
     public static void ordenarPorTiempo(ArrayList<Pedido> lista){
         int i = 0, j = 0;
