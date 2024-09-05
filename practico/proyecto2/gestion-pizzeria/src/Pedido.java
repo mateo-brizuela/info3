@@ -5,8 +5,8 @@ public class Pedido {
     private float precioTotal;
     private float tiempo;
     //constructor
-    public Pedido(int cp, String n, float pt, float t){
-        setNumeroPedido(cp);
+    public Pedido(int np, String n, float pt, float t){
+        setNumeroPedido(np);
         setNombre(n);
         setPrecioTotal(pt);
         setTiempo(t);

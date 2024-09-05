@@ -11,7 +11,7 @@ public class Main {
         do {
             System.out.println("GESTION DE PEDIDOS DE LA PIZZERIA");
             System.out.println("---------------------------------");
-            System.out.println("\nSe presenta un menú de opciones:");
+            System.out.println("Se presenta un menú de opciones:");
             System.out.println(
                     "1-Agregar nuevo pedido.\n2-Eliminar pedido.\n3-Actualizar información de un pedido.\n4-Ordenar por tiempo de preparacion (inserción).\n4-Ordenar por precio total (Shellsort).\n5-Ordenar por nombre del cliente (Quicksort).\n6-Salir.");
             System.out.println("Seleccione a continuación la acción que desea realizar:");
