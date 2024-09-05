@@ -13,5 +13,5 @@ public abstract class Ordenador {
             lista.set(j,temp);
         }
     }
-    
+
 }
