@@ -1,3 +1,4 @@
+package practico.proyecto2.src;
 import java.util.*;
 
 public class Main {
