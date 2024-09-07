@@ -1,4 +1,3 @@
-package practico.proyecto2.src;
 public class Pedido {
     //atributos
     private int numeroPedido;
