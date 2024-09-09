@@ -24,7 +24,7 @@ public class Ordenador {
         //variables para realizar los intercambios en los elementos de la lista
         int izq2 = 0;
         int der2 = 0;
-        int aux = 0;
+        Pedido aux;
 
         while (gap != 0) {
             gap /= 2;
@@ -33,9 +33,25 @@ public class Ordenador {
 
             //inicio el segundo bucle, que va a recorrer la lista hasta el final de la misma
             while (der < n) {
-                if () {
+                if (lista.get(izq).getPrecioTotal() > lista.get(der).getPrecioTotal()) {
+                    // le doy valor a los indices auxiliares para intercambiar los elementos hacia la izquierda
+                    izq2 = izq;
+                    der2 = der;
                     
+                    // recorre la lista hacia la izquierda hasta encontrar un elemento menor
+                    // o hasta salir del rango de la lista
+                    while (lista.get(der2).getPrecioTotal() < lista.get(izq2).getPrecioTotal() && izq2 >= 0) {
+                        //intercambio
+                        aux = lista.get(izq2);
+                        lista.set(izq2, lista.get(der2));
+                        lista.set(der2, aux);
+                        izq2 -= gap;
+                        der2 -= gap;
+                    }
+
                 }
+                izq++;
+                der++;
             }
         }
 
