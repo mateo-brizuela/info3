@@ -10,6 +10,15 @@ public class Main {
         var consola = new Scanner(System.in);
         int menu_op = 0;
         boolean exit = false;
+
+        pedidos.add(new Pedido(1,"mateo",5,5));
+        pedidos.add(new Pedido(2,"mateo",4,4));
+        pedidos.add(new Pedido(3,"mateo",3,3));
+        pedidos.add(new Pedido(4,"mateo",2,2));
+        pedidos.add(new Pedido(5,"mateo",1,1));
+        pedidos.add(new Pedido(6,"mateo",7,1));
+        pedidos.add(new Pedido(7,"mateo",6,1));
+        pedidos.add(new Pedido(8,"mateo",8,1));
         // inicio main
         do {
             System.out.println("GESTION DE PEDIDOS DE LA PIZZERIA");
@@ -45,7 +54,7 @@ public class Main {
                 case 5:
                     ordenarPorPrecio(pedidos);
                     break;
-                case 6:
+                case 7:
                     imprimirPedidos(pedidos);
                     break;
                 case 8:

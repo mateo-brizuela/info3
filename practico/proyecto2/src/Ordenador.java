@@ -17,44 +17,30 @@ public class Ordenador {
 
     public static void ordenarPorPrecio(ArrayList<Pedido> lista){
         // variables para recorrer la lista
-        int izq = 0;
-        int der = 0;
+        int i = 0;
+        int j = 0;
         int n = lista.size();
         int gap = n;
-        //variables para realizar los intercambios en los elementos de la lista
-        int izq2 = 0;
-        int der2 = 0;
+        // variable para intercambiar elementos de la lista 
         Pedido aux;
 
-        while (gap != 0) {
-            gap /= 2;
-            izq = 0;
-            der = izq + gap;
+        for(gap /= 2; gap > 0; gap /=2){
+            // este for empieza a contar desde el gap, luego i se incrementa en uno hasta llegar al final de la lista
+            for(i = gap; i < n; i++){
+                // pregunta si el elemento de la derecha es menor que el de la izquierda -
+                // de ser asi se inicia el tercer bucle
+                if (lista.get(i).getPrecioTotal() < lista.get(i - gap).getPrecioTotal()) {
 
-            //inicio el segundo bucle, que va a recorrer la lista hasta el final de la misma
-            while (der < n) {
-                if (lista.get(izq).getPrecioTotal() > lista.get(der).getPrecioTotal()) {
-                    // le doy valor a los indices auxiliares para intercambiar los elementos hacia la izquierda
-                    izq2 = izq;
-                    der2 = der;
-                    
-                    // recorre la lista hacia la izquierda hasta encontrar un elemento menor
-                    // o hasta salir del rango de la lista
-                    while (lista.get(der2).getPrecioTotal() < lista.get(izq2).getPrecioTotal() && izq2 >= 0) {
-                        //intercambio
-                        aux = lista.get(izq2);
-                        lista.set(izq2, lista.get(der2));
-                        lista.set(der2, aux);
-                        izq2 -= gap;
-                        der2 -= gap;
+                    // el tercer bucle empieza a hacer intercambios siempre y cuando el elemento de la derecha -
+                    // sea menor que el elemento de la izquierda o el indice este por apuntar fuera del rango de la lista
+                    for(j = i; (j >= gap) && lista.get(j).getPrecioTotal() < lista.get(j - gap).getPrecioTotal();j -= gap){
+                        // se intercambia el elemento de la derecha con el de la izquierda
+                        aux = lista.get(j - gap);
+                        lista.set(j - gap, lista.get(j));
+                        lista.set(j, aux);
                     }
-
                 }
-                izq++;
-                der++;
             }
         }
-
     }
-
 }
