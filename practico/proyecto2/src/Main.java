@@ -1,6 +1,7 @@
 package practico.proyecto2.src;
 import java.util.*;
 import static practico.proyecto2.src.Ordenador.ordenarPorTiempo;
+import static practico.proyecto2.src.Ordenador.ordenarPorNombre;
 import static practico.proyecto2.src.Ordenador.ordenarPorPrecio;
 
 public class Main {
@@ -11,14 +12,14 @@ public class Main {
         int menu_op = 0;
         boolean exit = false;
 
-        pedidos.add(new Pedido(1,"mateo",5,5));
-        pedidos.add(new Pedido(2,"mateo",4,4));
-        pedidos.add(new Pedido(3,"mateo",3,3));
-        pedidos.add(new Pedido(4,"mateo",2,2));
-        pedidos.add(new Pedido(5,"mateo",1,1));
-        pedidos.add(new Pedido(6,"mateo",7,1));
-        pedidos.add(new Pedido(7,"mateo",6,1));
-        pedidos.add(new Pedido(8,"mateo",8,1));
+        pedidos.add(new Pedido(1,"g",5,5));
+        pedidos.add(new Pedido(2,"c",4,4));
+        pedidos.add(new Pedido(3,"b",3,3));
+        pedidos.add(new Pedido(4,"f",2,2));
+        pedidos.add(new Pedido(5,"d",1,1));
+        pedidos.add(new Pedido(6,"a",7,1));
+        pedidos.add(new Pedido(7,"e",6,1));
+        pedidos.add(new Pedido(8,"h",8,1));
         // inicio main
         do {
             System.out.println("GESTION DE PEDIDOS DE LA PIZZERIA");
@@ -53,6 +54,9 @@ public class Main {
                     break;
                 case 5:
                     ordenarPorPrecio(pedidos);
+                    break;
+                case 6:
+                    ordenarPorNombre(pedidos, 0, pedidos.size() -1); // -1 porque el indice arranca de 0
                     break;
                 case 7:
                     imprimirPedidos(pedidos);

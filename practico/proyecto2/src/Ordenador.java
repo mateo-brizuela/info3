@@ -43,4 +43,49 @@ public class Ordenador {
             }
         }
     }
+
+    public static void ordenarPorNombre(ArrayList<Pedido> lista, int start, int end){
+        if (start >= end) {
+            return;
+        }
+
+        // variables para recorrer la lista y hacer intercambios
+        int left = start;
+        int right = end;
+        Pedido aux;
+
+        // tomo el primer elemento de la lista como pivote
+        Pedido pivot = lista.get(start);
+
+        while (left < right) {
+            // busca un elemento menor que el elemento menor que el pivote a menos que se cruce con left
+            while (lista.get(right).getNombre().compareTo(pivot.getNombre()) >= 0
+                && left < right) {
+                right--;
+            }
+
+            // busca un elemento mayor que el pivote a menos que se cruce con right
+            while (lista.get(left).getNombre().compareTo(pivot.getNombre()) <= 0
+                && left < right) {
+                left++;
+            }
+
+            if (left < right) {
+                aux = lista.get(left);
+                lista.set(left, lista.get(right));
+                lista.set(right, aux);
+            }
+
+        }
+
+        // acomodo el pivote en su posicion correcta
+        lista.set(start, lista.get(left));
+        lista.set(left, pivot);
+
+        // hago la funcion recursiva con subarreglos
+        ordenarPorNombre(lista, start, left  - 1);
+        ordenarPorNombre(lista, left + 1, end);
+    }
+
+
 }
