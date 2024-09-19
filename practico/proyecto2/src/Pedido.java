@@ -1,17 +1,25 @@
-import java.lang.annotation.Retention;
+package practico.proyecto2.src;
 
 public class Pedido {
     //atributos
+    private int numeroPedido;
     private String nombre;
     private float precioTotal;
     private float tiempo;
     //constructor
-    public  Pedido(String n, float pt, float t){
+    public Pedido(int np, String n, float pt, float t){
+        setNumeroPedido(np);
         setNombre(n);
         setPrecioTotal(pt);
         setTiempo(t);
     }
     //getters y setters
+    public int getNumeroPedido() {
+        return numeroPedido;
+    }
+    public void setNumeroPedido(int numeroPedido) {
+        this.numeroPedido = numeroPedido;
+    }    
     public String getNombre() {
         return nombre;
     }
@@ -32,6 +40,7 @@ public class Pedido {
     }
     //toString
     public String toString(){
-        return("Nombre:"+getNombre()+"\nPrecio:"+getPrecioTotal()+"\nTiempo:"+getTiempo());
-    }
+        return(getNumeroPedido()+"\t"+getNombre()+"\t"+getPrecioTotal()+"\t"+getTiempo());
+    }   
 }
+   
