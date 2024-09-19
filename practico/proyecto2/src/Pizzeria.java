@@ -1,4 +1,4 @@
-package practico.proyecto2.src;
+package proyecto2.src;
 
 public class Pizzeria {
     

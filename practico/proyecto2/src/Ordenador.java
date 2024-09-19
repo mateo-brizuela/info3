@@ -1,4 +1,4 @@
-package practico.proyecto2.src;
+package proyecto2.src;
 import java.util.ArrayList;
 
 public class Ordenador {

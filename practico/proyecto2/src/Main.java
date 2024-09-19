@@ -1,8 +1,8 @@
-package practico.proyecto2.src;
+package proyecto2.src;
 import java.util.*;
-import static practico.proyecto2.src.Ordenador.ordenarPorTiempo;
-import static practico.proyecto2.src.Ordenador.ordenarPorNombre;
-import static practico.proyecto2.src.Ordenador.ordenarPorPrecio;
+import static proyecto2.src.Ordenador.ordenarPorTiempo;
+import static proyecto2.src.Ordenador.ordenarPorNombre;
+import static proyecto2.src.Ordenador.ordenarPorPrecio;
 
 public class Main {
     public static void main(String[] args) {
