@@ -7,14 +7,16 @@ public class NodoPedido {
     private float precioTotal;
     private float tiempo;
     public NodoPedido next;
+
     //constructor
-    public NodoPedido(int numeroPedido, String nombre, float precioTotal, float tiempo){
-        this.numeroPedido = numeroPedido;
+    public NodoPedido(String nombre, float precioTotal, float tiempo){
+        numeroPedido = 0; // numero por defecto, si esta en 0 significa que el pedido aun no fue emitido
         this.nombre = nombre;
         this.precioTotal = precioTotal;
         this.tiempo = tiempo;
         next = null;
     }
+
     //getters y setters
     public int getNumeroPedido() {
         return numeroPedido;

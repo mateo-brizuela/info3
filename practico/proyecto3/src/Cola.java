@@ -3,7 +3,8 @@ package proyecto3.src;
 public class Cola {
     private NodoPedido head; //comienzo de la cola
     private NodoPedido back; //fin de la cola
-    private int cont; //cuenta la cantidad de elementos en la cola
+    private int cont; //cuenta la cantidad de elementos historico agregados en la cola
+                      // esto con el objetivo degenerar numeros de pedido unicos automaticamente
 
     public boolean isEmpty(){
         return head == null;
@@ -14,13 +15,16 @@ public class Cola {
             System.out.println("no hay pedidos en la cola, se crea un nuevo head");
             head = pIngresado;
             back = pIngresado;
-            cont++;
             System.out.println("el pedido se registro correctamente");
         }else{
             back.next = pIngresado;
             back = pIngresado;
-            cont++;
             System.out.println("el pedido se registro correctamente");
+        }
+
+        if (pIngresado.getNumeroPedido() == 0) {
+            cont++;
+            pIngresado.setNumeroPedido(cont);
         }
         
     }
@@ -31,11 +35,9 @@ public class Cola {
         }else if (head == back) {
             //System.out.println("solo queda un elemento, se va a eliminar");
             head = back = null;
-            cont--;
             System.out.println("se elimino el unico elemento de la cola");
         }else {
             head = head.next; 
-            System.out.println("se elimino el primer elemento de la cola");
         }
     }
 
@@ -45,8 +47,20 @@ public class Cola {
             return null;
         }else
         {
-            System.out.println("se retorna head");
             return head;
+        }
+    }
+
+    public void imprimirCola(){
+        NodoPedido aux; //variable para recorrer la cola
+        if (isEmpty()) {
+            System.out.println("no hay elementos en la cola para mostrar");
+        }else{
+            aux = head;
+            while (aux != null) {
+                System.out.println(aux);
+                aux = aux.next;
+            }
         }
     }
 }
